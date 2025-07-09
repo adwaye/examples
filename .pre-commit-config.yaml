@@ -1,0 +1,38 @@
+repos:
+- repo: local
+  hooks:
+  # - id: trailing-whitespace
+  #   name: Trailing whitespace
+  #   stages: [commit]
+  #   language: system
+  #   entry: trailing-whitespace-fixer
+  #   types: [python]
+
+  # - id: isort
+  #   name: import sort
+  #   stages: [commit]
+  #   language: system
+  #   entry: isort
+  #   types: [python]  
+
+  - id: black
+    name: format
+    stages: [commit]
+    language: system
+    entry: black
+    types: [python]  
+
+  - id: flake8
+    name: lint
+    stages: [commit]
+    language: system
+    entry: flake8
+    types: [python]  
+
+  - id: pydocstyle
+    name: dosctring style
+    stages: [commit]
+    language: system
+    entry: pydocstyle
+    types: [python]  
+
